@@ -12,25 +12,24 @@
 */
 
 Route::get('/', function () {
-    return view('blog.index');
+    return view('Moderna.index');
 })->name('/');
 
 
-Route::get('/about', function () {
-    return view('blog.about');
-})->name('about');
+
+Route::get('/index', function () {
+    return view('Moderna.index');
+})->name('/');
+
+
+Route::get('/blog', function () {
+    return view('Moderna.blog');
+})->name('/');
 
 
 
 
-Route::get('/post', function () {
-    return view('blog.post');
-})->name('post');
 
+Auth::routes();
 
-
-
-Route::get('/contact', function () {
-    return view('blog.contact');
-})->name('contact');
-
+Route::get('/home', 'HomeController@index')->name('home');
